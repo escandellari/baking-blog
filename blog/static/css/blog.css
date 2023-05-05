@@ -10,7 +10,7 @@ body {
 }
 
 .page-header {
-  background-color: #102425;
+  background-color: #00b8c2;
   margin-top: 0;
   margin-bottom: 40px;
   padding: 20px 20px 20px 40px;
@@ -66,7 +66,7 @@ h4 {
 .post > .date,
 .post > .actions {
   float: right;
-  padding-right: 20px;
+  /* padding-right: 20px; */
 }
 
 btn-secondary,

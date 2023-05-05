@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "blog",
-    "django_bootstrap_icons",
+    "fontawesomefree",
 ]
 
 MIDDLEWARE = [
@@ -125,6 +125,7 @@ STATIC_URL = "/static/"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-MEDIA_URL = "/media/"
-STATIC_ROOT = Path(BASE_DIR / "static")
-MEDIA_ROOT = Path(BASE_DIR / "media")
+# MEDIA_URL = "/media/"
+# STATIC_ROOT = Path(BASE_DIR / "static")
+# MEDIA_ROOT = Path(BASE_DIR / "media")
+LOGIN_REDIRECT_URL = "/"

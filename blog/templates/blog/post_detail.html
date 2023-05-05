@@ -1,24 +1,20 @@
-{% extends 'blog/base.html' %} {% load bootstrap_icons %} {% block content %}
-<article class="post">
-  {% if user.is_authenticated %}
-  <aside class="actions">
-    <a class="btn btn-secondary" href="{% url 'post_edit' pk=post.pk %}">
-      {% bs_icon 'pencil-fill' %}
-    </a>
-    <a class="btn btn-secondary" href="{% url 'post_remove' pk=post.pk %}">
-      {% bs_icon 'trash-fill' %}
-    </a>
-  </aside>
-  {% endif %} {% if post.published_date %}
-  <time class="date"> {{ post.published_date }} </time>
-  {% else %}
-  <aside class="actions">
-    <a class="btn btn-secondary" href="{% url 'post_publish' pk=post.pk %}">
-      Publish
-    </a>
-  </aside>
-  {% endif %}
-  <h2>{{ post.title }}</h2>
-  <p>{{ post.text|linebreaksbr }}</p>
-</article>
+{% extends 'blog/base.html' %}
+{% block content %}
+  <article class="post">
+    {% if user.is_authenticated %}
+      <aside class="actions">
+        <a class="btn btn-secondary" href="{% url 'post_edit' pk=post.pk %}"><i class="fa-regular fa-pen-to-square"></i></a>
+        <a class="btn btn-secondary" href="{% url 'post_remove' pk=post.pk %}"><i class="fa-solid fa-trash"></i></a>
+      </aside>
+    {% endif %}
+    {% if post.published_date %}
+      <time class="date"> {{ post.published_date }} </time>
+    {% else %}
+      <aside class="actions">
+        <a class="btn btn-secondary" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
+      </aside>
+    {% endif %}
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.text|linebreaksbr }}</p>
+  </article>
 {% endblock %}
